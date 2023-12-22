@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0"
+            prefWidth="400.0" style="-fx-background-color: #393E46;"
+            xmlns="http://javafx.com/javafx/8" fx:controller="com.unicon.schedulesync.controllers.AddSubject">
+    <children>
+        <TextField fx:id="name" alignment="CENTER" layoutX="14.0" layoutY="33.0" prefHeight="34.0" prefWidth="179.0"
+                   promptText="Subject Name" style="-fx-background-color: #00ADB5; -fx-text-fill: #EEEEEE;"/>
+        <TextField fx:id="shortName" alignment="CENTER" layoutX="214.0" layoutY="33.0" prefHeight="34.0"
+                   prefWidth="100.0" promptText="Short Name"
+                   style="-fx-background-color: #00ADB5; -fx-text-fill: #EEEEEE;"/>
+        <Button alignment="CENTER" layoutX="335.0" layoutY="33.0" mnemonicParsing="false" onAction="#onClickAdd"
+                prefHeight="34.0" prefWidth="51.0" style="-fx-background-color: #00ADB5;" text="Add" textFill="#eeeeee">
+            <font>
+                <Font name="Calibri Bold" size="15.0"/>
+            </font>
+        </Button>
+    </children>
+</AnchorPane>
