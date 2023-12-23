@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="150.0"
+            prefWidth="458.0" style="-fx-background-color: #393E46;"
+            xmlns="http://javafx.com/javafx/8" fx:controller="com.unicon.schedulesync.controllers.AddFaculty">
+    <TextField fx:id="name" alignment="CENTER" layoutX="29.0" layoutY="91.0" prefHeight="34.0" prefWidth="205.0"
+               promptText="Faculty Name" style="-fx-background-color: #00ADB5; -fx-text-fill: #EEEEEE;"/>
+    <TextField fx:id="shortName" alignment="CENTER" layoutX="29.0" layoutY="34.0" prefHeight="34.0"
+               prefWidth="134.0" promptText="Short Name"
+               style="-fx-background-color: #00ADB5; -fx-text-fill: #EEEEEE;"/>
+    <Button alignment="CENTER" layoutX="263.0" layoutY="91.0" mnemonicParsing="false" onAction="#onClickAdd"
+            prefHeight="34.0" prefWidth="51.0" style="-fx-background-color: #00ADB5;" text="Add" textFill="#eeeeee">
+        <font>
+            <Font name="Calibri Bold" size="15.0"/>
+        </font>
+    </Button>
+    <ComboBox fx:id="subjectBox" layoutX="183.0" layoutY="35.0" prefHeight="31.0" prefWidth="261.0"
+              style="-fx-background-color: #00ADB5; -fx-text-fill: #eeeeee;"/>
+    <Button alignment="CENTER" layoutX="352.0" layoutY="91.0" mnemonicParsing="false" onAction="#onClickView"
+            prefHeight="34.0" prefWidth="70.0" style="-fx-background-color: #00ADB5;" text="View"
+            textFill="#eeeeee">
+        <font>
+            <Font name="Calibri Bold" size="15.0"/>
+        </font>
+    </Button>
+</AnchorPane>

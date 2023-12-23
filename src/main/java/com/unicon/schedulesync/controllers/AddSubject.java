@@ -1,14 +1,22 @@
 package com.unicon.schedulesync.controllers;
 
+import com.unicon.schedulesync.ScheduleSync;
 import com.unicon.schedulesync.database.Database;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Objects;
 
 public class AddSubject {
     @FXML
@@ -37,6 +45,7 @@ public class AddSubject {
                     name.clear();
                     shortName.clear();
                 }
+                insertSubject.close();
             } catch (SQLException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error Occurred");
@@ -44,6 +53,20 @@ public class AddSubject {
                 alert.setContentText(name.getText() + " couldn't be added");
                 alert.showAndWait();
             }
+        }
+    }
+
+    public void onClickView(ActionEvent actionEvent) {
+        try {
+            Stage popupStage = new Stage();
+            popupStage.initModality(Modality.APPLICATION_MODAL);
+            popupStage.initOwner(((Node) actionEvent.getSource()).getScene().getWindow());
+            popupStage.setTitle("Subjects");
+            Scene scene = new Scene(FXMLLoader.load(Objects.requireNonNull(ScheduleSync.class.getResource("subject-table.fxml"))), 600, 400);
+            popupStage.setResizable(false);
+            popupStage.setScene(scene);
+            popupStage.showAndWait();
+        } catch (IOException ignored) {
         }
     }
 }

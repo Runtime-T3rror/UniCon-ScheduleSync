@@ -4,7 +4,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="MainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="MainPane" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity"
             minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
             style="-fx-background-color: #222831; -fx-padding: 2px;" xmlns="http://javafx.com/javafx/8"
             fx:controller="com.unicon.schedulesync.controllers.ScheduleSync">
@@ -15,99 +16,97 @@
             <BorderPane.margin>
                 <Insets/>
             </BorderPane.margin>
-            <children>
-                <Button alignment="CENTER" mnemonicParsing="false" onAction="#onClickAddSubject" prefHeight="31.0"
-                        prefWidth="101.0" style="-fx-background-color: #00ADB5;" text="Add Subject"
-                        textAlignment="CENTER" textFill="#eeeeee">
-                    <font>
-                        <Font name="Calibri Bold" size="15.0"/>
-                    </font>
-                    <padding>
-                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
-                    </padding>
-                    <FlowPane.margin>
-                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
-                    </FlowPane.margin>
-                </Button>
-                <Button alignment="CENTER" layoutX="17.0" layoutY="17.0" mnemonicParsing="false"
-                        onAction="#onClickAddFaculty" prefHeight="31.0" prefWidth="101.0"
-                        style="-fx-background-color: #00ADB5;" text="Add Faculty " textAlignment="CENTER"
-                        textFill="#eeeeee">
-                    <font>
-                        <Font name="Calibri Bold" size="15.0"/>
-                    </font>
-                    <padding>
-                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
-                    </padding>
-                    <FlowPane.margin>
-                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
-                    </FlowPane.margin>
-                </Button>
-                <Button alignment="CENTER" layoutX="125.0" layoutY="20.0" maxHeight="1.7976931348623157E308"
-                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onClickAddDepartment"
-                        style="-fx-background-color: #00ADB5;" text="Add Department" textAlignment="CENTER"
-                        textFill="#eeeeee">
-                    <font>
-                        <Font name="Calibri Bold" size="15.0"/>
-                    </font>
-                    <padding>
-                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
-                    </padding>
-                    <FlowPane.margin>
-                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
-                    </FlowPane.margin>
-                </Button>
-                <Button alignment="CENTER" layoutX="231.0" layoutY="20.0" mnemonicParsing="false"
-                        onAction="#onClickAddBatch" prefHeight="31.0" prefWidth="101.0"
-                        style="-fx-background-color: #00ADB5;" text="Add Batch" textAlignment="CENTER"
-                        textFill="#eeeeee">
-                    <font>
-                        <Font name="Calibri Bold" size="15.0"/>
-                    </font>
-                    <padding>
-                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
-                    </padding>
-                    <FlowPane.margin>
-                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
-                    </FlowPane.margin>
-                </Button>
-                <Button alignment="CENTER" layoutX="337.0" layoutY="20.0" mnemonicParsing="false"
-                        onAction="#onClickAddTimeSlot" prefHeight="31.0" prefWidth="132.0"
-                        style="-fx-background-color: #00ADB5;" text="Add TimeSlot" textAlignment="CENTER"
-                        textFill="#eeeeee">
-                    <font>
-                        <Font name="Calibri Bold" size="15.0"/>
-                    </font>
-                    <padding>
-                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
-                    </padding>
-                    <FlowPane.margin>
-                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
-                    </FlowPane.margin>
-                </Button>
-                <Button alignment="CENTER" contentDisplay="CENTER" layoutX="638.0" layoutY="17.0"
-                        mnemonicParsing="false" onAction="#onClickAddRoom" prefHeight="31.0" prefWidth="101.0"
-                        style="-fx-background-color: #00ADB5;" text="Add Room" textAlignment="CENTER"
-                        textFill="#eeeeee">
-                    <font>
-                        <Font name="Calibri Bold" size="15.0"/>
-                    </font>
-                    <padding>
-                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
-                    </padding>
-                </Button>
-                <Button alignment="CENTER" layoutX="695.0" layoutY="17.0" mnemonicParsing="false"
-                        onAction="#onClickAddTimeTable" prefHeight="31.0" prefWidth="125.0"
-                        style="-fx-background-color: #00ADB5;" text="Add Timetable" textAlignment="CENTER"
-                        textFill="#eeeeee">
-                    <font>
-                        <Font name="Calibri Bold" size="15.0"/>
-                    </font>
-                    <padding>
-                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
-                    </padding>
-                </Button>
-            </children>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#onClickAddSubject" prefHeight="31.0"
+                    prefWidth="101.0" style="-fx-background-color: #00ADB5;" text="Add Subject"
+                    textAlignment="CENTER" textFill="#eeeeee">
+                <font>
+                    <Font name="Calibri Bold" size="15.0"/>
+                </font>
+                <padding>
+                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
+                </padding>
+                <FlowPane.margin>
+                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
+                </FlowPane.margin>
+            </Button>
+            <Button alignment="CENTER" layoutX="17.0" layoutY="17.0" mnemonicParsing="false"
+                    onAction="#onClickAddFaculty" prefHeight="31.0" prefWidth="101.0"
+                    style="-fx-background-color: #00ADB5;" text="Add Faculty " textAlignment="CENTER"
+                    textFill="#eeeeee">
+                <font>
+                    <Font name="Calibri Bold" size="15.0"/>
+                </font>
+                <padding>
+                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
+                </padding>
+                <FlowPane.margin>
+                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
+                </FlowPane.margin>
+            </Button>
+            <Button alignment="CENTER" layoutX="125.0" layoutY="20.0" maxHeight="1.7976931348623157E308"
+                    maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onClickAddDepartment"
+                    style="-fx-background-color: #00ADB5;" text="Add Department" textAlignment="CENTER"
+                    textFill="#eeeeee">
+                <font>
+                    <Font name="Calibri Bold" size="15.0"/>
+                </font>
+                <padding>
+                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
+                </padding>
+                <FlowPane.margin>
+                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
+                </FlowPane.margin>
+            </Button>
+            <Button alignment="CENTER" layoutX="231.0" layoutY="20.0" mnemonicParsing="false"
+                    onAction="#onClickAddBatch" prefHeight="31.0" prefWidth="101.0"
+                    style="-fx-background-color: #00ADB5;" text="Add Batch" textAlignment="CENTER"
+                    textFill="#eeeeee">
+                <font>
+                    <Font name="Calibri Bold" size="15.0"/>
+                </font>
+                <padding>
+                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
+                </padding>
+                <FlowPane.margin>
+                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
+                </FlowPane.margin>
+            </Button>
+            <Button alignment="CENTER" layoutX="337.0" layoutY="20.0" mnemonicParsing="false"
+                    onAction="#onClickAddTimeSlot" prefHeight="31.0" prefWidth="132.0"
+                    style="-fx-background-color: #00ADB5;" text="Add TimeSlot" textAlignment="CENTER"
+                    textFill="#eeeeee">
+                <font>
+                    <Font name="Calibri Bold" size="15.0"/>
+                </font>
+                <padding>
+                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
+                </padding>
+                <FlowPane.margin>
+                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
+                </FlowPane.margin>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="638.0" layoutY="17.0"
+                    mnemonicParsing="false" onAction="#onClickAddRoom" prefHeight="31.0" prefWidth="101.0"
+                    style="-fx-background-color: #00ADB5;" text="Add Room" textAlignment="CENTER"
+                    textFill="#eeeeee">
+                <font>
+                    <Font name="Calibri Bold" size="15.0"/>
+                </font>
+                <padding>
+                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
+                </padding>
+            </Button>
+            <Button alignment="CENTER" layoutX="695.0" layoutY="17.0" mnemonicParsing="false"
+                    onAction="#onClickAddTimeTable" prefHeight="31.0" prefWidth="125.0"
+                    style="-fx-background-color: #00ADB5;" text="Add Timetable" textAlignment="CENTER"
+                    textFill="#eeeeee">
+                <font>
+                    <Font name="Calibri Bold" size="15.0"/>
+                </font>
+                <padding>
+                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
+                </padding>
+            </Button>
         </FlowPane>
     </top>
 </BorderPane>

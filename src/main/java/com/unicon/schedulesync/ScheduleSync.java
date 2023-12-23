@@ -15,8 +15,7 @@ public class ScheduleSync extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ScheduleSync.class.getResource("schedule-sync.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        stage.setResizable(false);
+        Scene scene = new Scene(fxmlLoader.load(), 750, 500);
         stage.setTitle("Schedule Sync");
         stage.setScene(scene);
         stage.show();

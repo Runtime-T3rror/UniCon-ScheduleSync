@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<TableView xmlns:fx="http://javafx.com/fxml/1" fx:id="table" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+           minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+           style="-fx-background-color: #393E46;" xmlns="http://javafx.com/javafx/8"
+           fx:controller="com.unicon.schedulesync.controllers.ViewSubject">
+    <columns>
+        <TableColumn fx:id="idColumn" prefWidth="75.0"
+                     style="-fx-text-fill: #eeeeee; -fx-background-color: #00ADB5; -fx-border-width: 0.5;-fx-border-color: #eee;-fx-border-style: solid;"
+                     text="ID"/>
+        <TableColumn fx:id="nameColumn" prefWidth="417.0"
+                     style="-fx-text-fill: #eeeeee; -fx-background-color: #00ADB5; -fx-border-width: 0.5;-fx-border-color: #eee;-fx-border-style: solid;"
+                     text="Name"/>
+        <TableColumn fx:id="shortNameColumn" prefWidth="107.0"
+                     style="-fx-text-fill: #eeeeee; -fx-background-color: #00ADB5; -fx-border-width: 0.5;-fx-border-color: #eee;-fx-border-style: solid;"
+                     text="ShortName"/>
+    </columns>
+</TableView>
