@@ -13,7 +13,6 @@ public class Subject {
     Integer id;
     String name;
     String shortName;
-
     @Override
     public String toString() {
         return name;

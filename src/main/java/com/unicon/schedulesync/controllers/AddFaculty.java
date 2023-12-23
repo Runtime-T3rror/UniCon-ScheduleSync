@@ -31,11 +31,11 @@ public class AddFaculty implements Initializable {
     @FXML
     public TextField shortName;
     @FXML
-    public ComboBox<Subject> subjectBox;
+    public ComboBox<Subject> facultyBox;
 
     @FXML
     public void onClickAdd(ActionEvent actionEvent) {
-        if (name.getText().isEmpty() || shortName.getText().isEmpty() || subjectBox.getValue() == null) {
+        if (name.getText().isEmpty() || shortName.getText().isEmpty() || facultyBox.getValue() == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Empty Fields");
             alert.setHeaderText(null);
@@ -46,12 +46,12 @@ public class AddFaculty implements Initializable {
                 PreparedStatement insertFaculty = connection.prepareStatement("INSERT INTO faculty(name,shortname,subject_id) VALUES(?,?,?)");
                 insertFaculty.setString(1, name.getText().trim());
                 insertFaculty.setString(2, shortName.getText().trim());
-                insertFaculty.setInt(3, subjectBox.getValue().getId());
+                insertFaculty.setInt(3, facultyBox.getValue().getId());
                 if (insertFaculty.executeUpdate() == 1) {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Successfully added");
                     alert.setHeaderText(null);
-                    alert.setContentText(name.getText() + " faculty successfully added for subject " + subjectBox.getValue().getName());
+                    alert.setContentText(name.getText() + " faculty successfully added for subject " + facultyBox.getValue().getName());
                     alert.showAndWait();
                     name.clear();
                     shortName.clear();
@@ -79,8 +79,8 @@ public class AddFaculty implements Initializable {
             getSubject.close();
         } catch (SQLException ignored) {
         }
-        subjectBox.getItems().clear();
-        subjectBox.getItems().addAll(subjects);
+        facultyBox.getItems().clear();
+        facultyBox.getItems().addAll(subjects);
     }
 
     @FXML

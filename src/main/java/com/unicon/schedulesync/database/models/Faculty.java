@@ -10,11 +10,12 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class Faculty {
+    @Getter
     Integer id;
+    @Getter
     String name;
     String shortName;
     String subjectShortName;
-
     @Override
     public String toString() {
         return name;

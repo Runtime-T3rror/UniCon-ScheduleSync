@@ -33,12 +33,12 @@ public class ViewFaculty implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ArrayList<Faculty> faculties = new ArrayList<>();
         try (Connection connection = Database.connect()) {
-            PreparedStatement getSubject = connection.prepareStatement("SELECT f.id AS faculty_id, f.name AS faculty_name, f.shortname AS faculty_shortname, s.shortname AS subject_shortname FROM faculty f JOIN subject s ON f.subject_id = s.id;");
-            ResultSet rs = getSubject.executeQuery();
+            PreparedStatement getFaculty = connection.prepareStatement("SELECT f.id AS faculty_id, f.name AS faculty_name, f.shortname AS faculty_shortname, s.shortname AS subject_shortname FROM faculty f JOIN subject s ON f.subject_id = s.id;");
+            ResultSet rs = getFaculty.executeQuery();
             while (rs.next()) {
                 faculties.add(new Faculty(rs.getInt("faculty_id"), rs.getString("faculty_name"), rs.getString("faculty_shortname"), rs.getString("subject_shortname")));
             }
-            getSubject.close();
+            getFaculty.close();
         } catch (SQLException ignored) {
         }
         idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
