@@ -144,7 +144,7 @@ public class AddTimeTable implements Initializable {
                     String endTime = resultSet.getString("EndTime");
                     String facultyShortName = resultSet.getString("FacultyShortName");
                     String subjectShortName = resultSet.getString("SubjectShortName");
-                    int roomNo = resultSet.getInt("RoomNo");
+                    String roomNo = resultSet.getString("RoomNo");
                     tableBuilder.append(String.format("%-36s %-36s %-18s\n", startTime + " - " + endTime, facultyShortName + "(" + subjectShortName + ")", roomNo));
                 }
                 resultSet.close();
