@@ -9,25 +9,25 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Subject {
+public class Department {
     private Integer id;
-    private String name;
-    private String shortName;
+    private String depName;
+    private String hodName;
 
     @Override
     public String toString() {
-        return name;
+        return depName;
     }
 
     public SimpleIntegerProperty idProperty() {
         return new SimpleIntegerProperty(this.id);
     }
 
-    public SimpleStringProperty nameProperty() {
-        return new SimpleStringProperty(this.name);
+    public SimpleStringProperty depNameProperty() {
+        return new SimpleStringProperty(this.depName);
     }
 
-    public SimpleStringProperty shortNameProperty() {
-        return new SimpleStringProperty(this.shortName);
+    public SimpleStringProperty hodNameProperty() {
+        return new SimpleStringProperty(this.hodName);
     }
 }

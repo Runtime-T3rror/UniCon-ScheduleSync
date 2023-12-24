@@ -14,6 +14,7 @@ public class Faculty {
     private String name;
     private String shortName;
     private String subjectShortName;
+
     @Override
     public String toString() {
         return name;
