@@ -10,9 +10,9 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class Subject {
-    Integer id;
-    String name;
-    String shortName;
+    private Integer id;
+    private String name;
+    private String shortName;
     @Override
     public String toString() {
         return name;

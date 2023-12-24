@@ -63,6 +63,13 @@
                 <configuration>
                     <source>21</source>
                     <target>21</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.30</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
             <plugin>
@@ -75,7 +82,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.unicon.schedulesync.uniconschedulesync/com.unicon.schedulesync.ScheduleSync
+                                com.unicon.schedulesync/com.unicon.schedulesync.ScheduleSync
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
