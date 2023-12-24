@@ -2,7 +2,6 @@ package com.unicon.schedulesync.controllers;
 
 import com.unicon.schedulesync.database.Database;
 import com.unicon.schedulesync.database.models.Batch;
-import com.unicon.schedulesync.database.models.Department;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -20,13 +19,13 @@ import java.util.ResourceBundle;
 
 public class ViewBatch implements Initializable {
     @FXML
+    public TableColumn<Batch, Integer> idColumn;
+    @FXML
+    public TableColumn<Batch, String> batchNameColumn;
+    @FXML
+    public TableColumn<Batch, String> depNameColumn;
+    @FXML
     TableView<Batch> table;
-    @FXML
-    public TableColumn<Batch,Integer> idColumn;
-    @FXML
-    public TableColumn<Batch,String> batchNameColumn;
-    @FXML
-    public TableColumn<Batch,String> depNameColumn;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -36,7 +35,7 @@ public class ViewBatch implements Initializable {
             PreparedStatement getBatch = connection.prepareStatement(sql);
             ResultSet rs = getBatch.executeQuery();
             while (rs.next()) {
-                batches.add(new Batch(rs.getInt("id"),rs.getString("batch_name"),rs.getString("dep_name")));
+                batches.add(new Batch(rs.getInt("id"), rs.getString("batch_name"), rs.getString("dep_name")));
             }
             getBatch.close();
 

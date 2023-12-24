@@ -2,9 +2,7 @@ package com.unicon.schedulesync.controllers;
 
 import com.unicon.schedulesync.ScheduleSync;
 import com.unicon.schedulesync.database.Database;
-import com.unicon.schedulesync.database.models.Batch;
 import com.unicon.schedulesync.database.models.Department;
-import com.unicon.schedulesync.database.models.Subject;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

@@ -9,10 +9,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-    public class Batch {
-        private Integer id;
-        private String batchName;
-        private String depName;
+public class Batch {
+    private Integer id;
+    private String batchName;
+    private String depName;
 
     @Override
     public String toString() {
