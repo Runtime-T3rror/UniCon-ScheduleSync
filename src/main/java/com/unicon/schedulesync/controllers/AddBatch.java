@@ -48,7 +48,7 @@ public class AddBatch implements Initializable {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Successfully added");
                     alert.setHeaderText(null);
-                    alert.setContentText(batchName.getText() + " faculty successfully added for subject " + departmentBox.getValue().getDepName());
+                    alert.setContentText(batchName.getText() + " batch successfully added for subject " + departmentBox.getValue().getDepName());
                     alert.showAndWait();
                     batchName.clear();
                 }

@@ -6,16 +6,16 @@
            minHeight="-Infinity"
            minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
            style="-fx-background-color: #393E46;" xmlns="http://javafx.com/javafx/8"
-           fx:controller="com.unicon.schedulesync.controllers.ViewTimeSlot">
+           fx:controller="com.unicon.schedulesync.controllers.ViewRoom">
     <columns>
         <TableColumn fx:id="idColumn" prefWidth="75.0"
                      style="-fx-text-fill: #eeeeee; -fx-background-color: #00ADB5; -fx-border-width: 0.5;-fx-border-color: #eee;-fx-border-style: solid;"
                      text="ID"/>
-        <TableColumn fx:id="startTimeColumn" prefWidth="273.0"
+        <TableColumn fx:id="roomNoColumn" prefWidth="268.0"
                      style="-fx-text-fill: #eeeeee; -fx-background-color: #00ADB5; -fx-border-width: 0.5;-fx-border-color: #eee;-fx-border-style: solid;"
-                     text="Start Time"/>
-        <TableColumn fx:id="endTimeColumn" prefWidth="251.0"
+                     text="Room No"/>
+        <TableColumn fx:id="roomTypeColumn" prefWidth="256.0"
                      style="-fx-text-fill: #eeeeee; -fx-background-color: #00ADB5; -fx-border-width: 0.5;-fx-border-color: #eee;-fx-border-style: solid;"
-                     text="End Time"/>
+                     text="Room Type"/>
     </columns>
 </TableView>

@@ -7,25 +7,23 @@
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="140.0"
             prefWidth="402.0" style="-fx-background-color: #393E46;"
             xmlns="http://javafx.com/javafx/8" fx:controller="com.unicon.schedulesync.controllers.AddDepartment">
-    <children>
-        <TextField fx:id="hodShortName" alignment="CENTER" layoutX="14.0" layoutY="33.0" prefHeight="34.0"
-                   prefWidth="206.0" promptText="Hod Shortname"
-                   style="-fx-background-color: #00ADB5; -fx-text-fill: #EEEEEE;"/>
-        <TextField fx:id="departmentName" alignment="CENTER" layoutX="250.0" layoutY="33.0" prefHeight="34.0"
-                   prefWidth="112.0" promptText="Department"
-                   style="-fx-background-color: #00ADB5; -fx-text-fill: #EEEEEE;"/>
-        <Button alignment="CENTER" layoutX="85.0" layoutY="92.0" mnemonicParsing="false" onAction="#onClickAdd"
-                prefHeight="34.0" prefWidth="85.0" style="-fx-background-color: #00ADB5;" text="Add" textFill="#eeeeee">
-            <font>
-                <Font name="Calibri Bold" size="15.0"/>
-            </font>
-        </Button>
-        <Button alignment="CENTER" layoutX="270.0" layoutY="92.0" mnemonicParsing="false" onAction="#onClickView"
-                prefHeight="34.0" prefWidth="72.0" style="-fx-background-color: #00ADB5;" text="View"
-                textFill="#eeeeee">
-            <font>
-                <Font name="Calibri Bold" size="15.0"/>
-            </font>
-        </Button>
-    </children>
+    <TextField fx:id="hodShortName" alignment="CENTER" layoutX="14.0" layoutY="33.0" prefHeight="34.0"
+               prefWidth="206.0" promptText="Hod Shortname"
+               style="-fx-background-color: #00ADB5; -fx-text-fill: #EEEEEE;"/>
+    <TextField fx:id="departmentName" alignment="CENTER" layoutX="250.0" layoutY="33.0" prefHeight="34.0"
+               prefWidth="112.0" promptText="Department"
+               style="-fx-background-color: #00ADB5; -fx-text-fill: #EEEEEE;"/>
+    <Button alignment="CENTER" layoutX="85.0" layoutY="92.0" mnemonicParsing="false" onAction="#onClickAdd"
+            prefHeight="34.0" prefWidth="85.0" style="-fx-background-color: #00ADB5;" text="Add" textFill="#eeeeee">
+        <font>
+            <Font name="Calibri Bold" size="15.0"/>
+        </font>
+    </Button>
+    <Button alignment="CENTER" layoutX="270.0" layoutY="92.0" mnemonicParsing="false" onAction="#onClickView"
+            prefHeight="34.0" prefWidth="72.0" style="-fx-background-color: #00ADB5;" text="View"
+            textFill="#eeeeee">
+        <font>
+            <Font name="Calibri Bold" size="15.0"/>
+        </font>
+    </Button>
 </AnchorPane>

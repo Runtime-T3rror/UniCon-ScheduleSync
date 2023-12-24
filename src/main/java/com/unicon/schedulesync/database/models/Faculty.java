@@ -17,7 +17,7 @@ public class Faculty {
 
     @Override
     public String toString() {
-        return name;
+        return name + "   {" + shortName + "} {" + subjectShortName + "}";
     }
 
     public SimpleIntegerProperty idProperty() {

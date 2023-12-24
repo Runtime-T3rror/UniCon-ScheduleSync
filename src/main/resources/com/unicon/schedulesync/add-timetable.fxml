@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="299.0"
+            prefWidth="652.0" style="-fx-background-color: #393E46;"
+            xmlns="http://javafx.com/javafx/8" fx:controller="com.unicon.schedulesync.controllers.AddTimeTable">
+    <Button alignment="CENTER" layoutX="339.0" layoutY="159.0" mnemonicParsing="false" onAction="#onClickAdd"
+            prefHeight="34.0" prefWidth="97.0" style="-fx-background-color: #00ADB5;" text="Add" textFill="#eeeeee">
+        <font>
+            <Font name="Calibri Bold" size="15.0"/>
+        </font>
+    </Button>
+    <ComboBox fx:id="timeBox" layoutX="50.0" layoutY="65.0" prefHeight="31.0" prefWidth="241.0" promptText="Time"
+              style="-fx-background-color: #00ADB5; -fx-text-fill: #eeeeee;"/>
+    <Button alignment="CENTER" layoutX="500.0" layoutY="159.0" mnemonicParsing="false" onAction="#onClickView"
+            prefHeight="34.0" prefWidth="80.0" style="-fx-background-color: #00ADB5;" text="View"
+            textFill="#eeeeee">
+        <font>
+            <Font name="Calibri Bold" size="15.0"/>
+        </font>
+    </Button>
+    <ComboBox fx:id="dayBox" layoutX="339.0" layoutY="65.0" prefHeight="31.0" prefWidth="241.0" promptText="Day"
+              style="-fx-background-color: #00ADB5; -fx-text-fill: #eeeeee;"/>
+    <ComboBox fx:id="departmentBatchBox" layoutX="50.0" layoutY="108.0" prefHeight="31.0" prefWidth="241.0"
+              promptText="Batch (Department)" style="-fx-background-color: #00ADB5; -fx-text-fill: #eeeeee;"/>
+    <ComboBox fx:id="facultyBox" layoutX="339.0" layoutY="108.0" prefHeight="31.0" prefWidth="241.0"
+              promptText="Faculty" style="-fx-background-color: #00ADB5; -fx-text-fill: #eeeeee;"/>
+    <ComboBox fx:id="roomBox" layoutX="50.0" layoutY="160.0" prefHeight="31.0" prefWidth="241.0" promptText="Room"
+              style="-fx-background-color: #00ADB5; -fx-text-fill: #eeeeee;"/>
+</AnchorPane>

@@ -9,25 +9,25 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Batch {
+public class Room {
     private Integer id;
-    private String batchName;
-    private String depName;
+    private String roomNo;
+    private String roomType;
 
     @Override
     public String toString() {
-        return batchName + "   {" + depName + "}";
+        return roomNo + "    {" + roomType + "}";
     }
 
     public SimpleIntegerProperty idProperty() {
         return new SimpleIntegerProperty(this.id);
     }
 
-    public SimpleStringProperty depNameProperty() {
-        return new SimpleStringProperty(this.depName);
+    public SimpleStringProperty roomTypeProperty() {
+        return new SimpleStringProperty(this.roomType);
     }
 
-    public SimpleStringProperty batchNameProperty() {
-        return new SimpleStringProperty(this.batchName);
+    public SimpleStringProperty roomNoProperty() {
+        return new SimpleStringProperty(this.roomNo);
     }
 }
