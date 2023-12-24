@@ -2,6 +2,10 @@
 
 UniCon ScheduleSync is a JavaFX application designed to assist in adding timetables to the UNIConnect project.
 
+## Demo video
+
+https://github.com/Runtime-T3rror/UniCon-ScheduleSync/assets/57978895/c24c9fac-e63d-41b4-bc8e-644f06d80a3e
+
 ## Prerequisites
 
 - Java 8 or later installed.
