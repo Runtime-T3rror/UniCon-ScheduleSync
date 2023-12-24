@@ -28,6 +28,7 @@ public class ViewTimeSlot implements Initializable {
             while (rs.next()) {
                 timeSlots.add(new TimeSlot(rs.getInt("id"), rs.getTime("start_time"), rs.getTime("end_time")));
             }
+            rs.close();
             getTimeSlot.close();
         } catch (SQLException ignored) {
         }

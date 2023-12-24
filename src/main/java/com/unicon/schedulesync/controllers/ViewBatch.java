@@ -37,8 +37,8 @@ public class ViewBatch implements Initializable {
             while (rs.next()) {
                 batches.add(new Batch(rs.getInt("id"), rs.getString("batch_name"), rs.getString("dep_name")));
             }
+            rs.close();
             getBatch.close();
-
         } catch (SQLException ignored) {
         }
         idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());

@@ -38,6 +38,7 @@ public class ViewFaculty implements Initializable {
             while (rs.next()) {
                 faculties.add(new Faculty(rs.getInt("faculty_id"), rs.getString("faculty_name"), rs.getString("faculty_shortname"), rs.getString("subject_shortname")));
             }
+            rs.close();
             getFaculty.close();
         } catch (SQLException ignored) {
         }

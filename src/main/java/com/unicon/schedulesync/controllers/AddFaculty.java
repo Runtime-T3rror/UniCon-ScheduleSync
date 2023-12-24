@@ -76,6 +76,7 @@ public class AddFaculty implements Initializable {
             while (rs.next()) {
                 subjects.add(new Subject(rs.getInt("id"), rs.getString("name"), rs.getString("shortname")));
             }
+            rs.close();
             getSubject.close();
         } catch (SQLException ignored) {
         }

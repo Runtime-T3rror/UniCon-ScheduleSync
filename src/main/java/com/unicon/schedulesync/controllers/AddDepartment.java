@@ -42,6 +42,8 @@ public class AddDepartment {
                 while (rs.next()) {
                     id = rs.getInt("id");
                 }
+                rs.close();
+                getHodId.close();
                 if (id != 0) {
                     PreparedStatement insertDepartment = connection.prepareStatement("INSERT INTO department(department_name,hod_id) VALUES(?,?)");
                     insertDepartment.setString(1, departmentName.getText().trim());

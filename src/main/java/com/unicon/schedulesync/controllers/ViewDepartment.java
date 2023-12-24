@@ -40,6 +40,7 @@ public class ViewDepartment implements Initializable {
                     rs.getString("hodName")
                 ));
             }
+            rs.close();
             getDepartment.close();
         } catch (SQLException ignored) {
         }

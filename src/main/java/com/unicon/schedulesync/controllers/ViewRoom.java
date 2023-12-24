@@ -36,6 +36,7 @@ public class ViewRoom implements Initializable {
             while (rs.next()) {
                 rooms.add(new Room(rs.getInt("id"), rs.getString("room_no"), rs.getString("room_type")));
             }
+            rs.close();
             getRooms.close();
         } catch (SQLException ignored) {
         }

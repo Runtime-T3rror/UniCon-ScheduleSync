@@ -60,8 +60,8 @@ public class AddTimeTable implements Initializable {
             while (rs.next()) {
                 batches.add(new Batch(rs.getInt("id"), rs.getString("batch_name"), rs.getString("dep_name")));
             }
-            getBatch.close();
             rs.close();
+            getBatch.close();
         } catch (SQLException ignored) {
         }
         departmentBatchBox.getItems().addAll(batches);
@@ -72,6 +72,7 @@ public class AddTimeTable implements Initializable {
             while (rs.next()) {
                 faculties.add(new Faculty(rs.getInt("faculty_id"), rs.getString("faculty_name"), rs.getString("faculty_shortname"), rs.getString("subject_shortname")));
             }
+            rs.close();
             getFaculty.close();
         } catch (SQLException ignored) {
         }
@@ -83,6 +84,7 @@ public class AddTimeTable implements Initializable {
             while (rs.next()) {
                 rooms.add(new Room(rs.getInt("id"), rs.getString("room_no"), rs.getString("room_type")));
             }
+            rs.close();
             getRooms.close();
         } catch (SQLException ignored) {
         }
@@ -145,6 +147,8 @@ public class AddTimeTable implements Initializable {
                     int roomNo = resultSet.getInt("RoomNo");
                     tableBuilder.append(String.format("%-36s %-36s %-18s\n", startTime + " - " + endTime, facultyShortName + "(" + subjectShortName + ")", roomNo));
                 }
+                resultSet.close();
+                getTimetable.close();
                 Stage popupStage = new Stage();
                 popupStage.initModality(Modality.APPLICATION_MODAL);
                 popupStage.initOwner(((Node) actionEvent.getSource()).getScene().getWindow());

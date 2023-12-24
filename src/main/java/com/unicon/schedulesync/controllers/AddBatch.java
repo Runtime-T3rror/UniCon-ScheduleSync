@@ -72,6 +72,7 @@ public class AddBatch implements Initializable {
             while (rs.next()) {
                 departments.add(new Department(rs.getInt("id"), rs.getString("depname"), rs.getString("hodName")));
             }
+            rs.close();
             getDepartment.close();
         } catch (SQLException ignored) {
         }
