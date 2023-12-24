@@ -85,7 +85,7 @@ public class AddBatch implements Initializable {
             Stage popupStage = new Stage();
             popupStage.initModality(Modality.APPLICATION_MODAL);
             popupStage.initOwner(((Node) actionEvent.getSource()).getScene().getWindow());
-            popupStage.setTitle("Departments");
+            popupStage.setTitle("Batch");
             Scene scene = new Scene(FXMLLoader.load(Objects.requireNonNull(ScheduleSync.class.getResource("batch-table.fxml"))), 600, 400);
             popupStage.setResizable(false);
             popupStage.setScene(scene);

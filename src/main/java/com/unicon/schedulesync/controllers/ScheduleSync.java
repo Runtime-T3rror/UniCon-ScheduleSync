@@ -50,7 +50,7 @@ public class ScheduleSync {
     @FXML
     public void onClickAddTimeSlot(ActionEvent actionEvent) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(com.unicon.schedulesync.ScheduleSync.class.getResource("add-timeslot.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(com.unicon.schedulesync.ScheduleSync.class.getResource("add-time-slot.fxml"));
             MainPane.setCenter(fxmlLoader.load());
         } catch (IOException ignored) {
         }
