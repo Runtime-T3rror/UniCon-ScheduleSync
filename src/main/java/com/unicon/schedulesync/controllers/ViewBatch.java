@@ -1,6 +1,7 @@
 package com.unicon.schedulesync.controllers;
 
 import com.unicon.schedulesync.database.Database;
+import com.unicon.schedulesync.database.models.Batch;
 import com.unicon.schedulesync.database.models.Department;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,36 +18,34 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class ViewDepartment implements Initializable {
+public class ViewBatch implements Initializable {
     @FXML
-    TableView<Department> table;
+    TableView<Batch> table;
     @FXML
-    TableColumn<Department, Integer> idColumn;
+    public TableColumn<Batch,Integer> idColumn;
     @FXML
-    TableColumn<Department, String> depNameColumn;
+    public TableColumn<Batch,String> batchNameColumn;
     @FXML
-    TableColumn<Department, String> hodNameColumn;
+    public TableColumn<Batch,String> depNameColumn;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ArrayList<Department> departments = new ArrayList<>();
+        ArrayList<Batch> batches = new ArrayList<>();
         try (Connection connection = Database.connect()) {
-            PreparedStatement getDepartment = connection.prepareStatement("SELECT d.id, d.department_name AS depname, f.name AS hodName FROM department d JOIN faculty f ON d.hod_id = f.id;");
-            ResultSet rs = getDepartment.executeQuery();
+            String sql = "SELECT b.id, b.batch_name, d.department_name AS dep_name FROM batch b JOIN department d ON b.dep_id = d.id";
+            PreparedStatement getBatch = connection.prepareStatement(sql);
+            ResultSet rs = getBatch.executeQuery();
             while (rs.next()) {
-                departments.add(new Department(
-                    rs.getInt("id"),
-                    rs.getString("depname"),
-                    rs.getString("hodName")
-                ));
+                batches.add(new Batch(rs.getInt("id"),rs.getString("batch_name"),rs.getString("dep_name")));
             }
-            getDepartment.close();
+            getBatch.close();
+
         } catch (SQLException ignored) {
         }
         idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
+        batchNameColumn.setCellValueFactory(cellData -> cellData.getValue().batchNameProperty());
         depNameColumn.setCellValueFactory(cellData -> cellData.getValue().depNameProperty());
-        hodNameColumn.setCellValueFactory(cellData -> cellData.getValue().hodNameProperty());
-        ObservableList<Department> data = FXCollections.observableArrayList(departments);
+        ObservableList<Batch> data = FXCollections.observableArrayList(batches);
         table.setItems(data);
     }
 }

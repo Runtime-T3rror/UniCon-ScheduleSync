@@ -2,6 +2,8 @@ package com.unicon.schedulesync.controllers;
 
 import com.unicon.schedulesync.ScheduleSync;
 import com.unicon.schedulesync.database.Database;
+import com.unicon.schedulesync.database.models.Batch;
+import com.unicon.schedulesync.database.models.Department;
 import com.unicon.schedulesync.database.models.Subject;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,43 +27,39 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class AddFaculty implements Initializable {
+public class AddBatch implements Initializable {
     @FXML
-    public TextField name;
+    public TextField batchName;
     @FXML
-    public TextField shortName;
-    @FXML
-    public ComboBox<Subject> subjectBox;
+    public ComboBox<Department> departmentBox;
 
     @FXML
     public void onClickAdd(ActionEvent actionEvent) {
-        if (name.getText().isEmpty() || shortName.getText().isEmpty() || subjectBox.getValue() == null) {
+        if (batchName.getText().isEmpty() || departmentBox.getValue() == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Empty Fields");
             alert.setHeaderText(null);
-            alert.setContentText("name, shortname and subject cannot be empty");
+            alert.setContentText("batch and department cannot be empty");
             alert.showAndWait();
         } else {
             try (Connection connection = Database.connect()) {
-                PreparedStatement insertFaculty = connection.prepareStatement("INSERT INTO faculty(name,shortname,subject_id) VALUES(?,?,?)");
-                insertFaculty.setString(1, name.getText().trim());
-                insertFaculty.setString(2, shortName.getText().trim());
-                insertFaculty.setInt(3, subjectBox.getValue().getId());
+                PreparedStatement insertFaculty = connection.prepareStatement("INSERT INTO batch(batch_name,dep_id) VALUES(?,?)");
+                insertFaculty.setString(1, batchName.getText().trim());
+                insertFaculty.setInt(2, departmentBox.getValue().getId());
                 if (insertFaculty.executeUpdate() == 1) {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Successfully added");
                     alert.setHeaderText(null);
-                    alert.setContentText(name.getText() + " faculty successfully added for subject " + subjectBox.getValue().getName());
+                    alert.setContentText(batchName.getText() + " faculty successfully added for subject " + departmentBox.getValue().getDepName());
                     alert.showAndWait();
-                    name.clear();
-                    shortName.clear();
+                    batchName.clear();
                 }
                 insertFaculty.close();
             } catch (SQLException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error Occurred");
                 alert.setHeaderText(null);
-                alert.setContentText(name.getText() + " couldn't be added");
+                alert.setContentText(batchName.getText() + " couldn't be added");
                 alert.showAndWait();
             }
         }
@@ -69,18 +67,18 @@ public class AddFaculty implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ArrayList<Subject> subjects = new ArrayList<>();
+        ArrayList<Department> departments = new ArrayList<>();
         try (Connection connection = Database.connect()) {
-            PreparedStatement getSubject = connection.prepareStatement("SELECT * from subject");
-            ResultSet rs = getSubject.executeQuery();
+            PreparedStatement getDepartment = connection.prepareStatement("SELECT d.id, d.department_name AS depname, f.name AS hodName FROM department d JOIN faculty f ON d.hod_id = f.id;");
+            ResultSet rs = getDepartment.executeQuery();
             while (rs.next()) {
-                subjects.add(new Subject(rs.getInt("id"), rs.getString("name"), rs.getString("shortname")));
+                departments.add(new Department(rs.getInt("id"), rs.getString("depname"), rs.getString("hodName")));
             }
-            getSubject.close();
+            getDepartment.close();
         } catch (SQLException ignored) {
         }
-        subjectBox.getItems().clear();
-        subjectBox.getItems().addAll(subjects);
+        departmentBox.getItems().clear();
+        departmentBox.getItems().addAll(departments);
     }
 
     @FXML
@@ -89,8 +87,8 @@ public class AddFaculty implements Initializable {
             Stage popupStage = new Stage();
             popupStage.initModality(Modality.APPLICATION_MODAL);
             popupStage.initOwner(((Node) actionEvent.getSource()).getScene().getWindow());
-            popupStage.setTitle("Faculties");
-            Scene scene = new Scene(FXMLLoader.load(Objects.requireNonNull(ScheduleSync.class.getResource("faculty-table.fxml"))), 600, 400);
+            popupStage.setTitle("Departments");
+            Scene scene = new Scene(FXMLLoader.load(Objects.requireNonNull(ScheduleSync.class.getResource("batch-table.fxml"))), 600, 400);
             popupStage.setResizable(false);
             popupStage.setScene(scene);
             popupStage.showAndWait();
